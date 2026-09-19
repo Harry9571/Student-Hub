@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/contact.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/privacy.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/terms.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/tools/percentage.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/tools/age.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/tools/cgpa.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/tools/marks.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/tools/attendance.html</loc>
+    </url>
+
+    <url>
+        <loc>https://YOUR-DOMAIN.pages.dev/tools/countdown.html</loc>
+    </url>
+
+</urlset>

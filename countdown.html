@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Countdown - STUDENT HUB</title>
+
+    <meta name="description"
+        content="Free exam countdown calculator for students. Find how many days are left until your exam.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 20px;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 700px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #667085;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+
+            border: 1px solid #d0d5dd;
+            border-radius: 8px;
+
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #2563eb;
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+
+            background: #eef4ff;
+            border-radius: 10px;
+
+            text-align: center;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            line-height: 1.8;
+        }
+
+        .back {
+            display: block;
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            color: #667085;
+            padding: 30px;
+        }
+
+        @media (max-width: 600px) {
+
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-container">
+
+        <div class="logo">
+            STUDENT HUB
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <div class="calculator">
+
+        <h1>
+            Exam Countdown
+        </h1>
+
+        <p class="description">
+            Find out how many days are left until your exam.
+        </p>
+
+
+        <label>
+            Select Exam Date
+        </label>
+
+        <input
+            type="date"
+            id="examDate"
+        >
+
+
+        <button onclick="calculateCountdown()">
+            Calculate Countdown
+        </button>
+
+
+        <div
+            class="result"
+            id="result"
+        >
+            Your countdown will appear here
+        </div>
+
+
+        <a
+            class="back"
+            href="../index.html"
+        >
+            ← Back to Student Hub
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 STUDENT HUB
+
+</footer>
+
+
+<script>
+
+function calculateCountdown() {
+
+    const input =
+        document.getElementById("examDate").value;
+
+
+    const result =
+        document.getElementById("result");
+
+
+    if (!input) {
+
+        result.innerHTML =
+            "Please select your exam date.";
+
+        return;
+    }
+
+
+    const examDate =
+        new Date(input + "T00:00:00");
+
+
+    const today =
+        new Date();
+
+
+    today.setHours(0, 0, 0, 0);
+
+
+    const difference =
+        examDate.getTime() -
+        today.getTime();
+
+
+    const days =
+        Math.ceil(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+
+    if (days > 0) {
+
+        result.innerHTML =
+            "⏳ " +
+            days +
+            " Days Remaining";
+
+    }
+
+    else if (days === 0) {
+
+        result.innerHTML =
+            "🎯 Your Exam is Today!";
+
+    }
+
+    else {
+
+        result.innerHTML =
+            "This exam date has already passed.";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
