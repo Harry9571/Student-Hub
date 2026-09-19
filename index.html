@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Student Hub - Free Student Tools</title>
+
     <meta name="description" content="Student Hub provides free online tools for students including percentage, age, CGPA, marks, attendance and exam countdown calculators.">
 
     <link rel="stylesheet" href="css/style.css">
@@ -12,266 +13,308 @@
 
 <body>
 
-<header>
-    <div class="nav">
+    <!-- HEADER -->
+    <header>
+        <div class="nav">
 
-        <a href="index.html" class="logo">
-            STUDENT <span>HUB</span>
-        </a>
+            <a href="index.html" class="logo">
+                STUDENT <span>HUB</span>
+            </a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#tools">Tools</a>
-            <a href="about.html">About</a>
-            <a href="contact.html" class="nav-btn">Contact</a>
-        </nav>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#tools">Tools</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="nav-btn">Contact</a>
+            </nav>
 
-    </div>
-</header>
+        </div>
+    </header>
 
 
-<main>
+    <!-- MAIN -->
+    <main>
 
-<section class="hero">
+        <!-- HERO -->
+        <section class="hero">
 
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
+            <div class="glow glow-one"></div>
+            <div class="glow glow-two"></div>
 
-    <div class="hero-content">
+            <div class="hero-content">
 
-        <div class="badge">
-            <span class="dot"></span>
-            Free Tools For Students
+                <div class="badge">
+                    <span class="dot"></span>
+                    Free Tools For Students
+                </div>
+
+                <h1>
+                    Everything Students Need,
+                    <span>In One Place.</span>
+                </h1>
+
+                <p>
+                    Simple, fast and free online tools designed
+                    to make student life easier.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#tools" class="primary">
+                        Explore Tools
+                    </a>
+
+                    <a href="about.html" class="secondary">
+                        Learn More
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="stats">
+
+            <div class="stats-box">
+
+                <div class="stat">
+                    <strong>6+</strong>
+                    <span>Student Tools</span>
+                </div>
+
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Free to Use</span>
+                </div>
+
+                <div class="stat">
+                    <strong>24/7</strong>
+                    <span>Available Online</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOOLS -->
+        <section class="tools" id="tools">
+
+            <div class="section-top">
+
+                <div class="section-title">
+
+                    <small>Student Tools</small>
+
+                    <h2>Useful Calculators</h2>
+
+                    <p>
+                        Choose a tool and get your result instantly.
+                    </p>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <input
+                    type="search"
+                    id="toolSearch"
+                    class="search"
+                    placeholder="Search tools..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- TOOL GRID -->
+            <div class="grid" id="toolGrid">
+
+
+                <!-- PERCENTAGE -->
+                <a href="tools/percentage.html" class="card tool-card">
+
+                    <div class="icon">%</div>
+
+                    <h3>Percentage Calculator</h3>
+
+                    <p>
+                        Calculate percentage quickly from
+                        obtained and total marks.
+                    </p>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <!-- AGE -->
+                <a href="tools/age.html" class="card tool-card">
+
+                    <div class="icon">🎂</div>
+
+                    <h3>Age Calculator</h3>
+
+                    <p>
+                        Calculate your exact age using
+                        your date of birth.
+                    </p>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <!-- CGPA -->
+                <a href="tools/cgpa.html" class="card tool-card">
+
+                    <div class="icon">📊</div>
+
+                    <h3>CGPA Calculator</h3>
+
+                    <p>
+                        Convert CGPA into percentage
+                        with ease.
+                    </p>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <!-- MARKS -->
+                <a href="tools/marks.html" class="card tool-card">
+
+                    <div class="icon">📝</div>
+
+                    <h3>Marks Calculator</h3>
+
+                    <p>
+                        Calculate marks percentage
+                        from your scores.
+                    </p>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <!-- ATTENDANCE -->
+                <a href="tools/attendance.html" class="card tool-card">
+
+                    <div class="icon">📅</div>
+
+                    <h3>Attendance Calculator</h3>
+
+                    <p>
+                        Calculate your attendance
+                        percentage instantly.
+                    </p>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <!-- COUNTDOWN -->
+                <a href="tools/countdown.html" class="card tool-card">
+
+                    <div class="icon">⏳</div>
+
+                    <h3>Exam Countdown</h3>
+
+                    <p>
+                        See how many days are left
+                        until your exam.
+                    </p>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta">
+
+            <div class="cta-box">
+
+                <h2>Study Smarter With Student Hub</h2>
+
+                <p>
+                    Free and simple tools made for students.
+                    No complicated setup, just enter your details
+                    and calculate.
+                </p>
+
+                <a href="#tools" class="primary">
+                    Explore Tools
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="copyright">
+                © 2026 Student Hub. All rights reserved.
+            </div>
+
+            <div class="links">
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="terms.html">Terms</a>
+
+            </div>
+
         </div>
 
-        <h1>
-            Everything Students Need,
-            <span>In One Place.</span>
-        </h1>
+    </footer>
 
-        <p>
-            Simple, fast and free online tools designed to make
-            student life easier.
-        </p>
 
-        <div class="hero-buttons">
-            <a href="#tools" class="primary">Explore Tools</a>
-            <a href="about.html" class="secondary">Learn More</a>
-        </div>
+    <!-- SEARCH SCRIPT -->
+    <script>
 
-    </div>
+        const search = document.getElementById("toolSearch");
+        const cards = document.querySelectorAll(".tool-card");
 
-</section>
+        search.addEventListener("input", function () {
 
+            const query = this.value
+                .toLowerCase()
+                .trim();
 
-<section class="stats">
+            cards.forEach(function (card) {
 
-    <div class="stats-box">
+                const text = card.textContent.toLowerCase();
 
-        <div class="stat">
-            <strong>6+</strong>
-            <span>Student Tools</span>
-        </div>
+                if (text.includes(query)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
 
-        <div class="stat">
-            <strong>100%</strong>
-            <span>Free to Use</span>
-        </div>
+            });
 
-        <div class="stat">
-            <strong>24/7</strong>
-            <span>Available Online</span>
-        </div>
+        });
 
-    </div>
-
-</section>
-
-
-<section class="tools" id="tools">
-
-    <div class="section-top">
-
-        <div class="section-title">
-            <small>Student Tools</small>
-
-            <h2>Useful Calculators</h2>
-
-            <p>
-                Choose a tool and get your result instantly.
-            </p>
-        </div>
-
-        <input
-            type="search"
-            id="toolSearch"
-            class="search"
-            placeholder="Search tools..."
-            autocomplete="off"
-        >
-
-    </div>
-
-
-    <div class="grid" id="toolGrid">
-
-        <a href="tools/percentage.html" class="card tool-card">
-
-            <div class="icon">%</div>
-
-            <h3>Percentage Calculator</h3>
-
-            <p>
-                Calculate percentage quickly from obtained
-                and total marks.
-            </p>
-
-            <span class="arrow">→</span>
-
-        </a>
-
-
-        <a href="tools/age.html" class="card tool-card">
-
-            <div class="icon">🎂</div>
-
-            <h3>Age Calculator</h3>
-
-            <p>
-                Calculate your exact age using your date of birth.
-            </p>
-
-            <span class="arrow">→</span>
-
-        </a>
-
-
-        <a href="tools/cgpa.html" class="card tool-card">
-
-            <div class="icon">📊</div>
-
-            <h3>CGPA Calculator</h3>
-
-            <p>
-                Convert CGPA into percentage with ease.
-            </p>
-
-            <span class="arrow">→</span>
-
-        </a>
-
-
-        <a href="tools/marks.html" class="card tool-card">
-
-            <div class="icon">📝</div>
-
-            <h3>Marks Calculator</h3>
-
-            <p>
-                Calculate marks percentage from your scores.
-            </p>
-
-            <span class="arrow">→</span>
-
-        </a>
-
-
-        <a href="tools/attendance.html" class="card tool-card">
-
-            <div class="icon">📅</div>
-
-            <h3>Attendance Calculator</h3>
-
-            <p>
-                Calculate your attendance percentage instantly.
-            </p>
-
-            <span class="arrow">→</span>
-
-        </a>
-
-
-        <a href="tools/countdown.html" class="card tool-card">
-
-            <div class="icon">⏳</div>
-
-            <h3>Exam Countdown</h3>
-
-            <p>
-                See how many days are left until your exam.
-            </p>
-
-            <span class="arrow">→</span>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<section class="cta">
-
-    <div class="cta-box">
-
-        <h2>Study Smarter With Student Hub</h2>
-
-        <p>
-            Free and simple tools made for students.
-            No complicated setup, just enter your details and calculate.
-        </p>
-
-        <a href="#tools" class="primary">Explore Tools</a>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-inner">
-
-        <div class="copyright">
-            © 2026 Student Hub. All rights reserved.
-        </div>
-
-        <div class="links">
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-        </div>
-
-    </div>
-
-</footer>
-
-
-<script>
-const search = document.getElementById("toolSearch");
-const cards = document.querySelectorAll(".tool-card");
-
-search.addEventListener("input", function () {
-
-    const query = this.value.toLowerCase().trim();
-
-    cards.forEach(function (card) {
-
-        const text = card.textContent.toLowerCase();
-
-        if (text.includes(query)) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
-
-    });
-
-});
-</script>
+    </script>
 
 </body>
 </html>
