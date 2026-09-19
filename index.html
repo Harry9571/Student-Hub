@@ -1,860 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>STUDENT HUB — Free Tools for Students</title>
+    <title>Student Hub - Free Student Tools</title>
+    <meta name="description" content="Student Hub provides free online tools for students including percentage, age, CGPA, marks, attendance and exam countdown calculators.">
 
-    <meta name="description"
-        content="STUDENT HUB is a free student platform with useful calculators for percentage, CGPA, marks, attendance, age and exam countdown.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #070b17;
-            color: #f8fafc;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-
-        /* ================= HEADER ================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(7, 11, 23, 0.82);
-            backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .nav {
-            max-width: 1150px;
-            height: 72px;
-
-            margin: auto;
-            padding: 0 22px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            color: white;
-            font-size: 21px;
-            font-weight: 900;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: #7c5cff;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        nav a {
-            color: #aab3c5;
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.2s;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        .nav-btn {
-            background: #7c5cff;
-            color: white !important;
-
-            padding: 10px 17px;
-            border-radius: 9px;
-        }
-
-        .nav-btn:hover {
-            background: #6848ee;
-        }
-
-
-        /* ================= HERO ================= */
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-
-            min-height: 620px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 80px 20px;
-        }
-
-        .glow {
-            position: absolute;
-
-            width: 420px;
-            height: 420px;
-
-            border-radius: 50%;
-
-            filter: blur(100px);
-            opacity: 0.25;
-
-            pointer-events: none;
-        }
-
-        .glow-one {
-            background: #6848ee;
-            top: -180px;
-            left: -120px;
-        }
-
-        .glow-two {
-            background: #168cff;
-            right: -150px;
-            bottom: -180px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-
-            max-width: 900px;
-            text-align: center;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 9px 15px;
-
-            border: 1px solid rgba(124,92,255,0.35);
-            border-radius: 50px;
-
-            background: rgba(124,92,255,0.10);
-
-            color: #b9aaff;
-
-            font-size: 13px;
-            font-weight: 700;
-
-            margin-bottom: 25px;
-        }
-
-        .dot {
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-            background: #8bffb1;
-
-            box-shadow: 0 0 12px #8bffb1;
-        }
-
-        .hero h1 {
-            font-size: clamp(44px, 8vw, 82px);
-            line-height: 0.98;
-
-            letter-spacing: -4px;
-
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(
-                90deg,
-                #8d6cff,
-                #35a7ff
-            );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            color: transparent;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-
-            color: #9ba5b7;
-
-            font-size: 17px;
-            line-height: 1.7;
-        }
-
-        .hero-buttons {
-            margin-top: 35px;
-
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-
-            flex-wrap: wrap;
-        }
-
-        .primary {
-            display: inline-block;
-
-            padding: 14px 22px;
-
-            border-radius: 10px;
-
-            background: linear-gradient(
-                135deg,
-                #7c5cff,
-                #536dff
-            );
-
-            color: white;
-
-            font-size: 15px;
-            font-weight: 800;
-
-            box-shadow:
-                0 12px 35px rgba(108,78,255,0.28);
-
-            transition: 0.2s;
-        }
-
-        .primary:hover {
-            transform: translateY(-2px);
-        }
-
-        .secondary {
-            display: inline-block;
-
-            padding: 14px 22px;
-
-            border-radius: 10px;
-
-            border: 1px solid #273149;
-
-            background: rgba(255,255,255,0.03);
-
-            color: #d7dce7;
-
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-
-        /* ================= STATS ================= */
-
-        .stats {
-            max-width: 850px;
-
-            margin: -15px auto 0;
-
-            padding: 0 20px;
-
-            position: relative;
-            z-index: 5;
-        }
-
-        .stats-box {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            background: rgba(255,255,255,0.035);
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            border-radius: 18px;
-
-            backdrop-filter: blur(15px);
-        }
-
-        .stat {
-            padding: 22px;
-            text-align: center;
-
-            border-right: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat strong {
-            display: block;
-
-            color: white;
-
-            font-size: 20px;
-
-            margin-bottom: 5px;
-        }
-
-        .stat span {
-            color: #8791a5;
-
-            font-size: 12px;
-        }
-
-
-        /* ================= TOOLS ================= */
-
-        .tools {
-            max-width: 1150px;
-
-            margin: auto;
-
-            padding: 110px 22px 90px;
-        }
-
-        .section-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-
-            gap: 30px;
-
-            margin-bottom: 38px;
-        }
-
-        .section-title small {
-            color: #7c5cff;
-
-            font-size: 12px;
-            font-weight: 800;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1.5px;
-        }
-
-        .section-title h2 {
-            font-size: 38px;
-
-            margin-top: 8px;
-
-            letter-spacing: -1.5px;
-        }
-
-        .section-title p {
-            color: #8791a5;
-
-            margin-top: 10px;
-
-            font-size: 15px;
-        }
-
-
-        /* SEARCH */
-
-        .search {
-            width: 260px;
-
-            padding: 13px 16px;
-
-            background: #0d1324;
-
-            border: 1px solid #202b43;
-
-            border-radius: 10px;
-
-            color: white;
-
-            outline: none;
-
-            font-size: 14px;
-        }
-
-        .search:focus {
-            border-color: #6d55e8;
-        }
-
-
-        /* TOOL GRID */
-
-        .grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 18px;
-        }
-
-        .card {
-            position: relative;
-
-            padding: 28px;
-
-            min-height: 205px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.018)
-                );
-
-            border: 1px solid #1c263b;
-
-            border-radius: 18px;
-
-            color: white;
-
-            overflow: hidden;
-
-            transition:
-                transform 0.25s,
-                border-color 0.25s,
-                box-shadow 0.25s;
-        }
-
-        .card::after {
-            content: "";
-
-            position: absolute;
-
-            width: 130px;
-            height: 130px;
-
-            right: -70px;
-            bottom: -70px;
-
-            background: #6650df;
-
-            filter: blur(65px);
-
-            opacity: 0.18;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-
-            border-color: #493e83;
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,0.25);
-        }
-
-        .icon {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 13px;
-
-            background: rgba(124,92,255,0.13);
-
-            border: 1px solid rgba(124,92,255,0.18);
-
-            font-size: 22px;
-
-            margin-bottom: 22px;
-        }
-
-        .card h3 {
-            font-size: 18px;
-
-            margin-bottom: 9px;
-        }
-
-        .card p {
-            color: #8994a8;
-
-            font-size: 13px;
-
-            line-height: 1.6;
-        }
-
-        .arrow {
-            position: absolute;
-
-            top: 28px;
-            right: 25px;
-
-            color: #667085;
-
-            font-size: 19px;
-        }
-
-
-        /* ================= CTA ================= */
-
-        .cta {
-            max-width: 1100px;
-
-            margin: 0 auto 100px;
-
-            padding: 0 22px;
-        }
-
-        .cta-box {
-            position: relative;
-
-            overflow: hidden;
-
-            text-align: center;
-
-            padding: 70px 25px;
-
-            border-radius: 24px;
-
-            border: 1px solid #282e48;
-
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(124,92,255,0.25),
-                    transparent 55%
-                ),
-                #0d1324;
-        }
-
-        .cta-box h2 {
-            font-size: 34px;
-
-            margin-bottom: 12px;
-        }
-
-        .cta-box p {
-            color: #8d97aa;
-
-            max-width: 570px;
-
-            margin: auto auto 28px;
-
-            line-height: 1.7;
-        }
-
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #040711;
-
-            border-top: 1px solid #151d2e;
-
-            padding: 35px 22px;
-        }
-
-        .footer-inner {
-            max-width: 1150px;
-
-            margin: auto;
-
-            display: flex;
-
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 25px;
-        }
-
-        .copyright {
-            color: #697386;
-
-            font-size: 13px;
-        }
-
-        .links {
-            display: flex;
-
-            gap: 20px;
-
-            flex-wrap: wrap;
-        }
-
-        .links a {
-            color: #8994a8;
-
-            font-size: 13px;
-        }
-
-        .links a:hover {
-            color: white;
-        }
-
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 800px) {
-
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .section-top {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .search {
-                width: 100%;
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            .nav {
-                height: auto;
-
-                padding: 18px;
-
-                flex-direction: column;
-
-                gap: 15px;
-            }
-
-            nav {
-                gap: 18px;
-            }
-
-            .nav-btn {
-                padding: 8px 13px;
-            }
-
-            .hero {
-                min-height: 570px;
-
-                padding: 65px 20px;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .stats-box {
-                grid-template-columns: 1fr;
-            }
-
-            .stat {
-                border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
-
-            .stat:last-child {
-                border-bottom: none;
-            }
-
-            .tools {
-                padding-top: 80px;
-            }
-
-            .section-title h2 {
-                font-size: 30px;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-box {
-                padding: 55px 20px;
-            }
-
-            .cta-box h2 {
-                font-size: 28px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-
-                text-align: center;
-            }
-
-            .links {
-                justify-content: center;
-            }
-
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
     <div class="nav">
 
-        <a
-            href="index.html"
-            class="logo"
-        >
-            STUDENT<span>HUB</span>
+        <a href="index.html" class="logo">
+            STUDENT <span>HUB</span>
         </a>
 
         <nav>
-
-            <a href="#tools">
-                Tools
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a
-                href="#tools"
-                class="nav-btn"
-            >
-                Get Started
-            </a>
-
+            <a href="index.html">Home</a>
+            <a href="#tools">Tools</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
         </nav>
 
     </div>
-
 </header>
 
 
-<!-- HERO -->
+<main>
 
 <section class="hero">
 
     <div class="glow glow-one"></div>
-
     <div class="glow glow-two"></div>
 
     <div class="hero-content">
 
         <div class="badge">
-
             <span class="dot"></span>
-
-            Free Student Tools
-
+            Free Tools For Students
         </div>
 
-
         <h1>
-
-            Study Smarter.
-
-            <br>
-
-            <span>Get Things Done.</span>
-
+            Everything Students Need,
+            <span>In One Place.</span>
         </h1>
 
-
         <p>
-
-            Simple and powerful tools built for students.
-            Calculate your marks, CGPA, attendance and more —
-            quickly and completely free.
-
+            Simple, fast and free online tools designed to make
+            student life easier.
         </p>
 
-
         <div class="hero-buttons">
-
-            <a
-                href="#tools"
-                class="primary"
-            >
-                Explore Student Tools →
-            </a>
-
-            <a
-                href="about.html"
-                class="secondary"
-            >
-                About STUDENT HUB
-            </a>
-
+            <a href="#tools" class="primary">Explore Tools</a>
+            <a href="about.html" class="secondary">Learn More</a>
         </div>
 
     </div>
 
 </section>
 
-
-<!-- STATS -->
 
 <section class="stats">
 
     <div class="stats-box">
 
         <div class="stat">
-
-            <strong>
-                6+
-            </strong>
-
-            <span>
-                Useful Tools
-            </span>
-
+            <strong>6+</strong>
+            <span>Student Tools</span>
         </div>
 
-
         <div class="stat">
-
-            <strong>
-                100% Free
-            </strong>
-
-            <span>
-                No Subscription
-            </span>
-
+            <strong>100%</strong>
+            <span>Free to Use</span>
         </div>
 
-
         <div class="stat">
-
-            <strong>
-                ⚡ Instant
-            </strong>
-
-            <span>
-                Quick Results
-            </span>
-
+            <strong>24/7</strong>
+            <span>Available Online</span>
         </div>
 
     </div>
@@ -862,269 +88,161 @@
 </section>
 
 
-<!-- TOOLS -->
-
-<section
-    class="tools"
-    id="tools"
->
+<section class="tools" id="tools">
 
     <div class="section-top">
 
         <div class="section-title">
+            <small>Student Tools</small>
 
-            <small>
-                Student Toolkit
-            </small>
-
-            <h2>
-                Everything You Need
-            </h2>
+            <h2>Useful Calculators</h2>
 
             <p>
-                Pick a tool and get your answer in seconds.
+                Choose a tool and get your result instantly.
             </p>
-
         </div>
-
 
         <input
             type="search"
+            id="toolSearch"
             class="search"
-            id="search"
-            placeholder="🔍  Search tools..."
-            onkeyup="searchTools()"
+            placeholder="Search tools..."
+            autocomplete="off"
         >
 
     </div>
 
 
-    <div
-        class="grid"
-        id="toolGrid"
-    >
+    <div class="grid" id="toolGrid">
 
+        <a href="tools/percentage.html" class="card tool-card">
 
-        <a
-            href="tools/percentage.html"
-            class="card"
-            data-name="percentage calculator"
-        >
+            <div class="icon">%</div>
 
-            <div class="icon">
-                %
-            </div>
-
-            <div class="arrow">
-                →
-            </div>
-
-            <h3>
-                Percentage Calculator
-            </h3>
+            <h3>Percentage Calculator</h3>
 
             <p>
-                Quickly calculate your percentage from
-                obtained and total marks.
+                Calculate percentage quickly from obtained
+                and total marks.
             </p>
+
+            <span class="arrow">→</span>
 
         </a>
 
 
-        <a
-            href="tools/age.html"
-            class="card"
-            data-name="age calculator"
-        >
+        <a href="tools/age.html" class="card tool-card">
 
-            <div class="icon">
-                🎂
-            </div>
+            <div class="icon">🎂</div>
 
-            <div class="arrow">
-                →
-            </div>
-
-            <h3>
-                Age Calculator
-            </h3>
+            <h3>Age Calculator</h3>
 
             <p>
-                Find your exact age using your date of birth.
+                Calculate your exact age using your date of birth.
             </p>
+
+            <span class="arrow">→</span>
 
         </a>
 
 
-        <a
-            href="tools/cgpa.html"
-            class="card"
-            data-name="cgpa calculator"
-        >
+        <a href="tools/cgpa.html" class="card tool-card">
 
-            <div class="icon">
-                🎓
-            </div>
+            <div class="icon">📊</div>
 
-            <div class="arrow">
-                →
-            </div>
-
-            <h3>
-                CGPA Calculator
-            </h3>
+            <h3>CGPA Calculator</h3>
 
             <p>
-                Convert CGPA into an estimated percentage
-                with one simple calculation.
+                Convert CGPA into percentage with ease.
             </p>
+
+            <span class="arrow">→</span>
 
         </a>
 
 
-        <a
-            href="tools/marks.html"
-            class="card"
-            data-name="marks calculator"
-        >
+        <a href="tools/marks.html" class="card tool-card">
 
-            <div class="icon">
-                📝
-            </div>
+            <div class="icon">📝</div>
 
-            <div class="arrow">
-                →
-            </div>
-
-            <h3>
-                Marks Calculator
-            </h3>
+            <h3>Marks Calculator</h3>
 
             <p>
-                Calculate exam percentage from marks
-                obtained and maximum marks.
+                Calculate marks percentage from your scores.
             </p>
+
+            <span class="arrow">→</span>
 
         </a>
 
 
-        <a
-            href="tools/attendance.html"
-            class="card"
-            data-name="attendance calculator"
-        >
+        <a href="tools/attendance.html" class="card tool-card">
 
-            <div class="icon">
-                📊
-            </div>
+            <div class="icon">📅</div>
 
-            <div class="arrow">
-                →
-            </div>
-
-            <h3>
-                Attendance Calculator
-            </h3>
+            <h3>Attendance Calculator</h3>
 
             <p>
-                Calculate your current attendance
-                percentage instantly.
+                Calculate your attendance percentage instantly.
             </p>
+
+            <span class="arrow">→</span>
 
         </a>
 
 
-        <a
-            href="tools/countdown.html"
-            class="card"
-            data-name="exam countdown"
-        >
+        <a href="tools/countdown.html" class="card tool-card">
 
-            <div class="icon">
-                ⏳
-            </div>
+            <div class="icon">⏳</div>
 
-            <div class="arrow">
-                →
-            </div>
-
-            <h3>
-                Exam Countdown
-            </h3>
+            <h3>Exam Countdown</h3>
 
             <p>
-                See exactly how much time remains
-                until your exam.
+                See how many days are left until your exam.
             </p>
 
-        </a>
+            <span class="arrow">→</span>
 
+        </a>
 
     </div>
 
 </section>
 
-
-<!-- CTA -->
 
 <section class="cta">
 
     <div class="cta-box">
 
-        <h2>
-            Your Student Toolkit,
-            <br>
-            All in One Place.
-        </h2>
+        <h2>Study Smarter With Student Hub</h2>
 
         <p>
-            No complicated setup. No unnecessary steps.
-            Just useful tools designed to make student life easier.
+            Free and simple tools made for students.
+            No complicated setup, just enter your details and calculate.
         </p>
 
-        <a
-            href="#tools"
-            class="primary"
-        >
-            Start Using Tools →
-        </a>
+        <a href="#tools" class="primary">Explore Tools</a>
 
     </div>
 
 </section>
 
+</main>
 
-<!-- FOOTER -->
 
 <footer>
 
     <div class="footer-inner">
 
         <div class="copyright">
-
-            © 2026 STUDENT HUB. All rights reserved.
-
+            © 2026 Student Hub. All rights reserved.
         </div>
 
-
         <div class="links">
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-
-            <a href="terms.html">
-                Terms
-            </a>
-
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
 
     </div>
@@ -1133,21 +251,27 @@
 
 
 <script>
+const search = document.getElementById("toolSearch");
+const cards = document.querySelectorAll(".tool-card");
 
-function searchTools() {
+search.addEventListener("input", function () {
 
-    const input =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase();
+    const query = this.value.toLowerCase().trim();
 
-    const cards =
-        document
-        .querySelectorAll(".card");
+    cards.forEach(function (card) {
 
-    cards.forEach(function(card) {
+        const text = card.textContent.toLowerCase();
 
-        const name =
-            card
-            .getAttribute("data-name")
+        if (text.includes(query)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>
